@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5d0fe;
+}
+
+header {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: 600;
+  margin: 1rem;
+}
+
+section {
+  display: flex;
+  min-height: 40vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border: 2px solid black;
+  padding: 2rem;
+  margin: 2rem;
+  background-color: #f0abfc;
+}
+
+.billing {
+  margin: 0.5rem;
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+input {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.6rem;
+  margin: 0.6rem;
+  border: 2px solid #e879f9;
+  border-radius: 10px;
+}
+
+.cashgiven {
+  margin: 0.5rem;
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+table {
+  margin: 2rem;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  padding: 0.5rem 0.9rem;
+  border: 2px solid #e879f9;
+}
+
+.cashgiven {
+  display: none;
+}
+
+caption {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+}
+
+#error-message {
+  color: red;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  font-size: large;
+  text-align: center;
+}
+
+.footer-list {
+  margin: 1rem;
+}
+
+a,
+img,
+li {
+  display: inline;
+  list-style: none;
+}
+
+img {
+  width: 40px;
+  padding: 0.2rem;
+}
