@@ -5,7 +5,6 @@ This project takes two input first as bill amount and second as cash to be given
 <li>HTML</li>
 <li>CSS</li>
 <li>Javascript</li>
-<li>Reactjs</li>
 </ol>
 <h1>Below is the attached screenshot:</h1>
 <img src="https://user-images.githubusercontent.com/105977388/190857045-9fd40cc1-4449-4f20-9283-1f331089a8eb.png" target="_blank" />
