@@ -7,52 +7,55 @@ const bill = document.querySelector("#bill");
 const cash = document.querySelector("#cash");
 var message = document.querySelector("#error-message");
 var cashbox = document.querySelector(".cashgiven");
-var input = document.querySelector("#cash");
 
-function BillValidation() {
-  message.innerText = "";
-  if (billValue < 0) {
-    message.innerText = "Bill value must be greater than 0";
-  } else if (billValue == "") {
-    message.innerText = "Bill value must be number";
-  } else {
+next.addEventListener("click", billValidate);
+check.addEventListener("click", cashvalidate);
+
+function billValidate() {
+  if (bill.value) {
     cashbox.style.display = "block";
   }
 }
 
-function CashValidation() {
-  var inputCash = Number(input.value);
-  message.innerText = "";
-  if (inputCash == 0) {
-    message.innerText = "Cash cannot be zero";
-  } else if (billValue == inputCash) {
-    message.innerText = "No amount to be returned";
-    table.style.display = none;
-  } else if (billValue > inputCash) {
-    message.innerText = "Cash Value must be greater than bill value";
-    return false;
+function cashvalidate() {
+  hideMessage();
+  if (bill.value > 0) {
+    if (cash.value > bill.value) {
+      var amountReturn = cash.value - bill.value;
+      calculateAmount(amountReturn);
+    } else if (cash.value === bill.value) {
+      showMessage("No change ");
+      resetTable();
+    } else {
+      showMessage("Cash Value must be greater than bill value");
+      resetTable();
+    }
   } else {
-    return true;
+    showMessage("Enter Valid Bill Amount,Should be greater than Zero");
+    resetTable();
   }
 }
 
-function calculateChange(amountToReturn) {
+function resetTable() {
   for (let i = 0; i < arr.length; i++) {
-    var numberOfNotes = Math.trunc(amountToReturn / arr[i]);
-    notes[i].innerText = numberOfNotes;
-    amountToReturn = amountToReturn % arr[i];
+    notes[i].innerText = 0;
   }
 }
 
-next.addEventListener("click", () => {
-  billValue = Number(bill.value);
-  BillValidation();
-});
-
-check.addEventListener("click", () => {
-  if (CashValidation()) {
-    var amountToReturn = input.value - billValue;
-    console.log(amountToReturn);
-    calculateChange(amountToReturn);
+function calculateAmount(amount) {
+  for (let i = 0; i < arr.length; i++) {
+    var noOfNotes = Math.trunc(amount / arr[i]);
+    amount = amount % arr[i];
+    notes[i].innerText = noOfNotes;
   }
-});
+}
+
+function showMessage(msg) {
+  console.log("jj");
+  message.innerText = msg;
+  message.style.display = "block";
+}
+
+function hideMessage() {
+  message.style.display = "none";
+}
